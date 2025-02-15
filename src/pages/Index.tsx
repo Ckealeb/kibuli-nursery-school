@@ -1,5 +1,5 @@
 
-import { school, graduationCap, smile } from "lucide-react";
+import { School, GraduationCap, Smile } from "lucide-react";
 
 const Index = () => {
   return (
@@ -33,19 +33,19 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: school,
+                icon: School,
                 title: "Quality Education",
                 description:
                   "Expert teachers and modern learning methods for optimal development",
               },
               {
-                icon: smile,
+                icon: Smile,
                 title: "Nurturing Environment",
                 description:
                   "Safe and supportive space for children to grow and learn",
               },
               {
-                icon: graduationCap,
+                icon: GraduationCap,
                 title: "Holistic Development",
                 description:
                   "Focus on academic, social, and emotional growth",
