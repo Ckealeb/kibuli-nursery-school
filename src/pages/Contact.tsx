@@ -118,6 +118,26 @@ const Contact = () => {
             </form>
           </div>
         </div>
+
+        {/* Google Maps Section */}
+        <div className="mb-20 animate-fade-up">
+          <h2 className="text-3xl font-quicksand font-semibold text-gray-900 text-center mb-8">
+            Find Us on the Map
+          </h2>
+          <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7576476927447!2d32.58847661475355!3d0.3005799997749881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8080541c6d%3A0x7cc24c1ec387b817!2sKibuli%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2s!4v1646825738292!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Kibuli Nursery School Location"
+              className="rounded-2xl"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );
