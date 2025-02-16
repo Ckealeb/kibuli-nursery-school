@@ -1,47 +1,29 @@
-
 import { School, GraduationCap, Smile, Users } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const images = [
-    {
-      url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
-      title: "School Entrance",
-      description: "Welcome to Kibuli Muslim Nursery School",
-    },
-    {
-      url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
-      title: "Learning Environment",
-      description: "Interactive and engaging learning spaces",
-    },
-    {
-      url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
-      title: "Play Area",
-      description: "Safe and fun outdoor activities",
-    },
-  ];
-
+  const images = [{
+    url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
+    title: "School Entrance",
+    description: "Welcome to Kibuli Muslim Nursery School"
+  }, {
+    url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
+    title: "Learning Environment",
+    description: "Interactive and engaging learning spaces"
+  }, {
+    url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
+    title: "Play Area",
+    description: "Safe and fun outdoor activities"
+  }];
   useEffect(() => {
     if (!api) return;
-
     const interval = setInterval(() => {
       api.scrollNext();
     }, 5000);
-
     return () => clearInterval(interval);
   }, [api]);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
+  return <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -70,14 +52,9 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <Carousel setApi={setApi} className="relative w-full">
             <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
+              {images.map((image, index) => <CarouselItem key={index}>
                   <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
-                    <img
-                      src={image.url}
-                      alt={image.title}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={image.url} alt={image.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
                       <div className="absolute bottom-0 p-6 text-white">
                         <h3 className="text-2xl font-quicksand font-semibold mb-2">
@@ -87,8 +64,7 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
             <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
@@ -111,19 +87,15 @@ const Index = () => {
               child feels safe, valued, and inspired to learn.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="bg-secondary/10 p-6 rounded-xl hover:bg-secondary/20 transition-colors duration-200">
+              <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-300 hover:bg-blue-200">
                 <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Partnership</h3>
-                <p className="text-gray-600 text-sm">
-                  We believe in strong partnerships with parents to ensure the best possible care and education for your child.
-                </p>
+                <h3 className="text-xl font-semibold mb-2">Vision</h3>
+                <p className="text-gray-600 text-sm">A Knowledgeable, Cultured and Devout child.</p>
               </div>
               <div className="bg-secondary/10 p-6 rounded-xl hover:bg-secondary/20 transition-colors duration-200">
                 <Smile className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Happy Learning</h3>
-                <p className="text-gray-600 text-sm">
-                  Our approach combines play-based learning with structured activities to make education fun and engaging.
-                </p>
+                <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
+                <p className="text-gray-600 text-sm">Nurturing and empowering learners to become devout, literary and responsible global citizens by providing quality holistic education.</p>
               </div>
               <div className="bg-secondary/10 p-6 rounded-xl hover:bg-secondary/20 transition-colors duration-200">
                 <School className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -141,43 +113,30 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: School,
-                title: "Quality Education",
-                description:
-                  "Expert teachers and modern learning methods for optimal development",
-              },
-              {
-                icon: Smile,
-                title: "Nurturing Environment",
-                description:
-                  "Safe and supportive space for children to grow and learn",
-              },
-              {
-                icon: GraduationCap,
-                title: "Holistic Development",
-                description:
-                  "Focus on academic, social, and emotional growth",
-              },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl bg-secondary/10 hover:bg-secondary/20 transition-colors duration-200 animate-float"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
+            {[{
+            icon: School,
+            title: "Quality Education",
+            description: "Expert teachers and modern learning methods for optimal development"
+          }, {
+            icon: Smile,
+            title: "Nurturing Environment",
+            description: "Safe and supportive space for children to grow and learn"
+          }, {
+            icon: GraduationCap,
+            title: "Holistic Development",
+            description: "Focus on academic, social, and emotional growth"
+          }].map((feature, index) => <div key={index} className="p-6 rounded-2xl bg-secondary/10 hover:bg-secondary/20 transition-colors duration-200 animate-float" style={{
+            animationDelay: `${index * 0.2}s`
+          }}>
                 <feature.icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-quicksand font-semibold mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
