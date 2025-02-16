@@ -1,8 +1,19 @@
 import { School, GraduationCap, Smile, Users } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
+import RegistrationForm from "@/components/RegistrationForm";
+
 const Index = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+
   const images = [{
     url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
     title: "School Entrance",
@@ -16,6 +27,7 @@ const Index = () => {
     title: "Play Area",
     description: "Safe and fun outdoor activities"
   }];
+
   useEffect(() => {
     if (!api) return;
     const interval = setInterval(() => {
@@ -23,7 +35,9 @@ const Index = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [api]);
-  return <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -36,7 +50,10 @@ const Index = () => {
               Where young minds bloom and dreams take flight
             </p>
             <div className="flex justify-center gap-4">
-              <button className="bg-primary text-white px-8 py-3 rounded-full font-quicksand hover:bg-primary/90 transition-colors duration-200 shadow-lg hover:shadow-xl">
+              <button
+                onClick={() => setShowRegistrationForm(true)}
+                className="bg-primary text-white px-8 py-3 rounded-full font-quicksand hover:bg-primary/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              >
                 Enroll Now
               </button>
               <button className="bg-white text-primary px-8 py-3 rounded-full font-quicksand border-2 border-primary hover:bg-primary/5 transition-colors duration-200">
@@ -46,6 +63,12 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Registration Form Modal */}
+      <RegistrationForm
+        isOpen={showRegistrationForm}
+        onClose={() => setShowRegistrationForm(false)}
+      />
 
       {/* Image Slider Section */}
       <section className="py-12 px-4">
@@ -85,7 +108,7 @@ const Index = () => {
               <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-200 hover:bg-blue-100">
                 <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Vision</h3>
-                <p className="text-lg text-sky-950">A Knowledgeable, Cultured and Devout child.</p>
+                <p className="text-xl text-sky-950">A Knowledgeable, Cultured and Devout child.</p>
               </div>
               <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-300 hover:bg-blue-200">
                 <Smile className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -132,6 +155,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
