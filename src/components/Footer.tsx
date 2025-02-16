@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-[#222222] text-white">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 bg-slate-950 hover:bg-slate-800">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* School Info */}
           <div className="space-y-4">
