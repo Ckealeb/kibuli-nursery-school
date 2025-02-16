@@ -30,7 +30,7 @@ const Index = () => {
           <div className="text-center space-y-6 animate-fade-up">
             <h1 className="text-4xl md:text-6xl font-quicksand font-bold text-gray-900">
               Welcome to{" "}
-              <span className="text-primary">Kibuli Nursery School</span>
+              <span className="text-primary">Kibuli Muslim Nursery School</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 font-quicksand max-w-3xl mx-auto">
               Where young minds bloom and dreams take flight
@@ -79,26 +79,21 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-gray-900 mb-4">
               Dear Parents & Guardians
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Thank you for considering Kibuli Nursery School for your child's early education journey. 
-              We understand that choosing the right nursery school is one of the most important decisions 
-              you'll make for your child's future. Here, we create a nurturing environment where every 
-              child feels safe, valued, and inspired to learn.
-            </p>
+            <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-lg px-[20px]"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">Thank you for considering Kibuli Muslim Nursery School for your child's early education journey. We understand that choosing the right nursery school is one of the most important decisions you'll make for your child's future. Here, we create a nurturing environment where every child feels safe, valued, and inspired to learn.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-300 hover:bg-blue-200">
+              <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-200 hover:bg-blue-100">
                 <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Vision</h3>
-                <p className="text-gray-600 text-sm">A Knowledgeable, Cultured and Devout child.</p>
+                <p className="text-lg text-sky-950">A Knowledgeable, Cultured and Devout child.</p>
               </div>
-              <div className="bg-secondary/10 p-6 rounded-xl hover:bg-secondary/20 transition-colors duration-200">
+              <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-300 hover:bg-blue-200">
                 <Smile className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-                <p className="text-gray-600 text-sm">Nurturing and empowering learners to become devout, literary and responsible global citizens by providing quality holistic education.</p>
+                <p className="text-sm text-cyan-950">Nurturing and empowering learners to become devout, literary and responsible global citizens by providing quality holistic education.</p>
               </div>
-              <div className="bg-secondary/10 p-6 rounded-xl hover:bg-secondary/20 transition-colors duration-200">
-                <School className="w-12 h-12 text-primary mx-auto mb-4" />
+              <div className="p-6 rounded-xl transition-colors duration-200 bg-blue-400 hover:bg-blue-300">
+                <School className="w-12 h-12 text-primary mx-auto mb-4 bg-blue-400 hover:bg-blue-300" />
                 <h3 className="text-xl font-semibold mb-2">Safe Environment</h3>
                 <p className="text-gray-600 text-sm">
                   Your child's safety and well-being are our top priorities, with trained staff and secure facilities.
@@ -125,9 +120,9 @@ const Index = () => {
             icon: GraduationCap,
             title: "Holistic Development",
             description: "Focus on academic, social, and emotional growth"
-          }].map((feature, index) => <div key={index} className="p-6 rounded-2xl bg-secondary/10 hover:bg-secondary/20 transition-colors duration-200 animate-float" style={{
+          }].map((feature, index) => <div key={index} style={{
             animationDelay: `${index * 0.2}s`
-          }}>
+          }} className="p-6 rounded-2xl transition-colors duration-200 animate-float bg-sky-300 hover:bg-sky-200">
                 <feature.icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-quicksand font-semibold mb-2">
                   {feature.title}
