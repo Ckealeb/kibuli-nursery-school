@@ -1,3 +1,4 @@
+
 import { School, GraduationCap, Smile, Users } from "lucide-react";
 import {
   Carousel,
@@ -5,11 +6,12 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
 const Index = () => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
   const images = [
     {
       url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
@@ -32,7 +34,7 @@ const Index = () => {
     if (!api) return;
 
     const interval = setInterval(() => {
-      api.next();
+      api.scrollNext();
     }, 5000);
 
     return () => clearInterval(interval);
