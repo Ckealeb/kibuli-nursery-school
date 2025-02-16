@@ -23,7 +23,7 @@ const Navbar = () => {
     path: "/contact"
   }];
   return <nav className="bg-white/95 backdrop-blur-sm fixed w-full z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-sky-500 hover:bg-sky-400">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
