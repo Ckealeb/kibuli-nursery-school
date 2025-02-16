@@ -1,5 +1,4 @@
-
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Twitter } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -18,13 +17,28 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@kibulinursery.com",
-      link: "mailto:info@kibulinursery.com",
+      content: "info@kibulimuslim.com",
+      link: "mailto:info@kibulimuslim.com",
     },
     {
       icon: Clock,
       title: "Hours",
       content: "Monday - Friday: 7:00 AM - 5:00 PM",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Instagram,
+      title: "Instagram",
+      handle: "@kibulimuslimnursery",
+      link: "https://instagram.com/kibulimuslimnursery",
+    },
+    {
+      icon: Twitter,
+      title: "X (Twitter)",
+      handle: "@kibulimuslimnursery",
+      link: "https://x.com/kibulimuslimnursery",
     },
   ];
 
@@ -46,7 +60,7 @@ const Contact = () => {
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 animate-float"
+                  className="bg-white p-6 rounded-2xl shadow-lg hover:bg-primary/5 transition-colors duration-200"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <item.icon className="w-8 h-8 text-primary mb-4" />
@@ -65,6 +79,26 @@ const Contact = () => {
                   )}
                 </div>
               ))}
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <h3 className="text-xl font-quicksand font-semibold mb-4">
+                Follow Us
+              </h3>
+              <div className="flex gap-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-primary/5"
+                  >
+                    <social.icon className="w-5 h-5" />
+                    <span>{social.handle}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -119,7 +153,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Google Maps Section */}
         <div className="mb-20 animate-fade-up">
           <h2 className="text-3xl font-quicksand font-semibold text-gray-900 text-center mb-8">
             Find Us on the Map

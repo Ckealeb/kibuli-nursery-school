@@ -21,8 +21,16 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              <span className="text-2xl font-quicksand font-bold text-primary">Kibuli</span>
-              <span className="text-2xl font-quicksand font-light">Nursery</span>
+              <img 
+                src="/lovable-uploads/9dbb516f-d0e0-4034-b9fc-3c50f50f3d47.png" 
+                alt="Kibuli Muslim Nursery School Logo" 
+                className="h-16 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg font-quicksand font-bold text-primary">Kibuli Muslim</span>
+                <span className="text-lg font-quicksand font-light">Nursery School</span>
+                <span className="text-xs text-gray-600 italic">Education is Divine</span>
+              </div>
             </Link>
           </div>
 
@@ -32,7 +40,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="font-quicksand text-gray-600 hover:text-primary transition-colors duration-200"
+                className="font-quicksand text-gray-600 hover:bg-primary/5 px-3 py-2 rounded-md transition-colors duration-200"
               >
                 {item.name}
               </Link>
