@@ -1,19 +1,13 @@
-
 import { Heart, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-[#222222] text-white">
+  return <footer className="bg-[#222222] text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* School Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-quicksand font-semibold text-white">
-              Kibuli Nursery School
-            </h3>
+            <h3 className="text-xl font-quicksand font-semibold text-white">Kibuli Muslim Nursery School</h3>
             <p className="text-gray-300 text-sm">
               Nurturing young minds and building strong foundations for the future.
             </p>
@@ -25,21 +19,23 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About Us", path: "/about" },
-                { name: "Programs", path: "/programs" },
-                { name: "Gallery", path: "/gallery" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
-                  >
+              {[{
+              name: "Home",
+              path: "/"
+            }, {
+              name: "About Us",
+              path: "/about"
+            }, {
+              name: "Programs",
+              path: "/programs"
+            }, {
+              name: "Gallery",
+              path: "/gallery"
+            }].map(link => <li key={link.name}>
+                  <Link to={link.path} className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm">
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -88,8 +84,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
