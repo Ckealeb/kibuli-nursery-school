@@ -1,7 +1,43 @@
-
 import { School, GraduationCap, Smile, Users } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [api, setApi] = useState<any>();
+  const images = [
+    {
+      url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
+      title: "School Entrance",
+      description: "Welcome to Kibuli Muslim Nursery School",
+    },
+    {
+      url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
+      title: "Learning Environment",
+      description: "Interactive and engaging learning spaces",
+    },
+    {
+      url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
+      title: "Play Area",
+      description: "Safe and fun outdoor activities",
+    },
+  ];
+
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary/20">
       {/* Hero Section */}
@@ -24,6 +60,37 @@ const Index = () => {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Image Slider Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Carousel setApi={setApi} className="relative w-full">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                    <img
+                      src={image.url}
+                      alt={image.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                      <div className="absolute bottom-0 p-6 text-white">
+                        <h3 className="text-2xl font-quicksand font-semibold mb-2">
+                          {image.title}
+                        </h3>
+                        <p className="text-lg">{image.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+          </Carousel>
         </div>
       </section>
 

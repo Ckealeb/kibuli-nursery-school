@@ -4,19 +4,39 @@ import { ImageIcon } from "lucide-react";
 const Gallery = () => {
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      title: "Outdoor Activities",
-      description: "Children exploring nature and learning through play",
+      url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
+      title: "School Entrance",
+      description: "The welcoming entrance of Kibuli Muslim Nursery School",
     },
     {
-      url: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
-      title: "Arts and Crafts",
-      description: "Creative expression through various art mediums",
+      url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
+      title: "Learning Environment",
+      description: "Classroom equipped with educational materials and alphabet displays",
     },
     {
-      url: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
-      title: "Learning Time",
-      description: "Engaging classroom activities and learning sessions",
+      url: "/lovable-uploads/daa2510f-a44c-409e-b339-095808f5539f.png",
+      title: "Study Area",
+      description: "Comfortable learning space with educational charts and materials",
+    },
+    {
+      url: "/lovable-uploads/1dadfa6d-eaa9-4c38-ac81-b4f8e653be28.png",
+      title: "Classroom Setup",
+      description: "Well-organized classroom with learning materials and furniture",
+    },
+    {
+      url: "/lovable-uploads/de8dfbd6-71dc-4f86-ba18-996d18b9bae4.png",
+      title: "Educational Wall",
+      description: "Wall displays featuring various professions and community roles",
+    },
+    {
+      url: "/lovable-uploads/e94b44ee-1362-446d-bdf3-c57ced89fd19.png",
+      title: "Learning Space",
+      description: "Spacious classroom with educational posters and natural lighting",
+    },
+    {
+      url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
+      title: "Playground Area",
+      description: "Colorful outdoor play equipment for physical development",
     },
   ];
 
