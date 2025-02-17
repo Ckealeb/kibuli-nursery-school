@@ -1,24 +1,31 @@
-import { MapPin, Phone, Mail, Clock, Instagram, Twitter } from "lucide-react";
+
+import { MapPin, Phone, Mail, Clock, Instagram, Twitter, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
       title: "Address",
-      content: "123 School Lane, Kibuli, Kampala",
-      link: "https://maps.google.com",
+      content: "Off Pr. Badru Kakungulu Rd, opp Kibuli Hspt.",
+      link: "https://maps.google.com/?q=Kibuli+Muslim+Nursery+School,+Prince+Badru+Kakungulu+Road,+Kampala",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+256 123 456 789",
-      link: "tel:+256123456789",
+      content: "+256 701 748 194",
+      link: "tel:+256701748194",
+    },
+    {
+      icon: MessageSquare,
+      title: "WhatsApp",
+      content: "+256 701 748 194",
+      link: "https://wa.me/256701748194",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@kibulimuslim.com",
-      link: "mailto:info@kibulimuslim.com",
+      content: "kibulimuslimnurseryschool@gmail.com",
+      link: "mailto:kibulimuslimnurseryschool@gmail.com",
     },
     {
       icon: Clock,
@@ -31,16 +38,43 @@ const Contact = () => {
     {
       icon: Instagram,
       title: "Instagram",
-      handle: "@kibulimuslimnursery",
-      link: "https://instagram.com/kibulimuslimnursery",
+      handle: "@kibulimuslimnurseryschool",
+      link: "https://instagram.com/kibulimuslimnurseryschool",
     },
     {
       icon: Twitter,
       title: "X (Twitter)",
-      handle: "@kibulimuslimnursery",
-      link: "https://x.com/kibulimuslimnursery",
+      handle: "@kibulimuslimnurseryschool",
+      link: "https://x.com/kibulimuslimnurseryschool",
     },
   ];
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    // Send via email
+    window.location.href = `mailto:kibulimuslimnurseryschool@gmail.com?subject=${encodeURIComponent(data.subject as string)}&body=${encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+Message: ${data.message}
+    `)}`;
+
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/256701748194?text=${encodeURIComponent(`
+*New Message from Website*
+Name: ${data.name}
+Email: ${data.email}
+Subject: ${data.subject}
+Message: ${data.message}
+    `)}`, '_blank');
+  };
 
   return (
     <div className="min-h-screen pt-24 bg-gradient-to-b from-white to-secondary/20">
@@ -70,6 +104,8 @@ const Contact = () => {
                   {item.link ? (
                     <a
                       href={item.link}
+                      target={item.link.startsWith('http') ? '_blank' : undefined}
+                      rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="text-gray-600 hover:text-primary transition-colors duration-200"
                     >
                       {item.content}
@@ -85,20 +121,21 @@ const Contact = () => {
               <h3 className="text-xl font-quicksand font-semibold mb-4">
                 Follow Us
               </h3>
-              <div className="flex gap-4">
+              <ul className="space-y-4">
                 {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-primary/5"
-                  >
-                    <social.icon className="w-5 h-5" />
-                    <span>{social.handle}</span>
-                  </a>
+                  <li key={index}>
+                    <a
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-primary/5"
+                    >
+                      <social.icon className="w-5 h-5" />
+                      <span>{social.handle}</span>
+                    </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 
@@ -106,13 +143,15 @@ const Contact = () => {
             <h3 className="text-2xl font-quicksand font-semibold mb-6">
               Send us a Message
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
@@ -122,6 +161,8 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
@@ -131,6 +172,8 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
+                  name="subject"
+                  required
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
@@ -139,6 +182,8 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
                   rows={4}
                 ></textarea>
