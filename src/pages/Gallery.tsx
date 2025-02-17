@@ -1,43 +1,36 @@
 
-import { ImageIcon } from "lucide-react";
-
 const Gallery = () => {
   const images = [
     {
-      url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
-      title: "School Entrance",
-      description: "The welcoming entrance of Kibuli Muslim Nursery School",
+      src: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
+      alt: "School Entrance",
+      caption: "Our welcoming school entrance"
     },
     {
-      url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
-      title: "Learning Environment",
-      description: "Classroom equipped with educational materials and alphabet displays",
+      src: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
+      alt: "Learning Environment",
+      caption: "Interactive learning spaces"
     },
     {
-      url: "/lovable-uploads/daa2510f-a44c-409e-b339-095808f5539f.png",
-      title: "Study Area",
-      description: "Comfortable learning space with educational charts and materials",
+      src: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
+      alt: "Play Area",
+      caption: "Safe and fun play areas"
     },
     {
-      url: "/lovable-uploads/1dadfa6d-eaa9-4c38-ac81-b4f8e653be28.png",
-      title: "Classroom Setup",
-      description: "Well-organized classroom with learning materials and furniture",
+      src: "/lovable-uploads/daa2510f-a44c-409e-b339-095808f5539f.png",
+      alt: "Activity Room",
+      caption: "Engaging activity spaces"
     },
     {
-      url: "/lovable-uploads/de8dfbd6-71dc-4f86-ba18-996d18b9bae4.png",
-      title: "Educational Wall",
-      description: "Wall displays featuring various professions and community roles",
+      src: "/lovable-uploads/de8dfbd6-71dc-4f86-ba18-996d18b9bae4.png",
+      alt: "Library",
+      caption: "Well-stocked library"
     },
     {
-      url: "/lovable-uploads/e94b44ee-1362-446d-bdf3-c57ced89fd19.png",
-      title: "Learning Space",
-      description: "Spacious classroom with educational posters and natural lighting",
-    },
-    {
-      url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
-      title: "Playground Area",
-      description: "Colorful outdoor play equipment for physical development",
-    },
+      src: "/lovable-uploads/e94b44ee-1362-446d-bdf3-c57ced89fd19.png",
+      alt: "Outdoor Activities",
+      caption: "Outdoor learning activities"
+    }
   ];
 
   return (
@@ -45,10 +38,10 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-gray-900 mb-6">
-            Our <span className="text-primary">Gallery</span>
+            Our School <span className="text-primary">Gallery</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Glimpses of joy, learning, and growth at Kibuli Nursery School
+            Take a visual journey through our nurturing learning environment
           </p>
         </div>
 
@@ -56,22 +49,22 @@ const Gallery = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg animate-float"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-[8s] animate-zoom-out"
+              style={{
+                animationDelay: `${index * 0.2}s`
+              }}
             >
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={image.url}
-                  alt={image.title}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 p-6 text-white">
                   <h3 className="text-xl font-quicksand font-semibold mb-2">
-                    {image.title}
+                    {image.alt}
                   </h3>
-                  <p className="text-sm">{image.description}</p>
+                  <p className="text-sm">{image.caption}</p>
                 </div>
               </div>
             </div>

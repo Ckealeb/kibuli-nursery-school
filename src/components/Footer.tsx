@@ -1,5 +1,5 @@
 
-import { Heart, Mail, MapPin, Phone } from "lucide-react";
+import { Heart, Mail, MapPin, Phone, Instagram, Twitter, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -25,22 +25,10 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                {
-                  name: "Home",
-                  path: "/",
-                },
-                {
-                  name: "About Us",
-                  path: "/about",
-                },
-                {
-                  name: "Programs",
-                  path: "/programs",
-                },
-                {
-                  name: "Gallery",
-                  path: "/gallery",
-                },
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "/about" },
+                { name: "Programs", path: "/programs" },
+                { name: "Gallery", path: "/gallery" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -81,12 +69,45 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-300">
+                <MessageSquare className="w-4 h-4 text-primary" />
+                <a 
+                  href="https://wa.me/256701748194"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors duration-200"
+                >
+                  WhatsApp: +256 701 748 194
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
                 <Mail className="w-4 h-4 text-primary" />
                 <a 
                   href="mailto:kibulimuslimnurseryschool@gmail.com"
                   className="hover:text-primary transition-colors duration-200"
                 >
                   kibulimuslimnurseryschool@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <Instagram className="w-4 h-4 text-primary" />
+                <a 
+                  href="https://instagram.com/kibulimuslimnurseryschool"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors duration-200"
+                >
+                  @kibulimuslimnurseryschool
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <Twitter className="w-4 h-4 text-primary" />
+                <a 
+                  href="https://x.com/kibulimuslimnurseryschool"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors duration-200"
+                >
+                  @kibulimuslimnurseryschool
                 </a>
               </li>
             </ul>
