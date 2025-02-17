@@ -1,4 +1,3 @@
-
 import { School, GraduationCap, Smile, Users } from "lucide-react";
 import {
   Carousel,
@@ -10,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import RegistrationForm from "@/components/RegistrationForm";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -57,9 +57,12 @@ const Index = () => {
               >
                 Enroll Now
               </button>
-              <button className="bg-white text-primary px-8 py-3 rounded-full font-quicksand border-2 border-primary hover:bg-primary/5 transition-colors duration-200">
+              <Link 
+                to="/about"
+                className="bg-white text-primary px-8 py-3 rounded-full font-quicksand border-2 border-primary hover:bg-primary/5 transition-colors duration-200"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>

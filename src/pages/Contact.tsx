@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Mail, Clock, Instagram, Twitter, MessageSquare } from "lucide-react";
 
 const Contact = () => {
@@ -18,8 +17,8 @@ const Contact = () => {
     {
       icon: MessageSquare,
       title: "WhatsApp",
-      content: "+256 701 748 194",
-      link: "https://wa.me/256701748194",
+      content: "+256 758 942 853",
+      link: "https://wa.me/256758942853",
     },
     {
       icon: Mail,
@@ -67,7 +66,7 @@ Message: ${data.message}
     `)}`;
 
     // Open WhatsApp with pre-filled message
-    window.open(`https://wa.me/256701748194?text=${encodeURIComponent(`
+    window.open(`https://wa.me/256758942853?text=${encodeURIComponent(`
 *New Message from Website*
 Name: ${data.name}
 Email: ${data.email}
