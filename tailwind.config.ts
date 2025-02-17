@@ -49,10 +49,15 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "zoom-out": {
+          "0%": { transform: "scale(0.5)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
       },
       animation: {
         "float": "float 3s ease-in-out infinite",
         "fade-up": "fade-up 0.5s ease-out forwards",
+        "zoom-out": "zoom-out 8s ease-out forwards",
       },
     },
   },
