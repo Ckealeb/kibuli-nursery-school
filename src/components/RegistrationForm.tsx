@@ -19,20 +19,24 @@ const RegistrationForm = ({ isOpen, onClose }: RegistrationFormProps) => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      await fetch(`mailto:kibulimuslimnurseryschool@gmail.com?subject=New Student Registration&body=
-        Parent Information:%0D%0A
-        Name: ${data.parentName}%0D%0A
-        Email: ${data.parentEmail}%0D%0A
-        Phone: ${data.parentPhone}%0D%0A
-        Address: ${data.address}%0D%0A
-        %0D%0A
-        Child Information:%0D%0A
-        Name: ${data.childName}%0D%0A
-        Date of Birth: ${data.dateOfBirth}%0D%0A
-        Gender: ${data.gender}%0D%0A
-        Previous School: ${data.previousSchool}%0D%0A
-        Medical Conditions: ${data.medicalConditions}%0D%0A
-      `);
+      // Open WhatsApp with pre-filled message
+      window.open(`https://wa.me/256758942853?text=${encodeURIComponent(`
+*New Student Registration*
+
+Child Information:
+Name: ${data.childName}
+Class: ${data.class}
+Date of Birth: ${data.dateOfBirth}
+Gender: ${data.gender}
+Previous School: ${data.previousSchool}
+Medical Conditions: ${data.medicalConditions}
+
+Parent Information:
+Name: ${data.parentName}
+Email: ${data.parentEmail}
+Phone: ${data.parentPhone}
+Address: ${data.address}
+      `)}`, '_blank');
 
       toast({
         title: "Registration Submitted",
@@ -66,6 +70,73 @@ const RegistrationForm = ({ isOpen, onClose }: RegistrationFormProps) => {
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
+          {/* Child Information */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900">Child Information</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Child's Full Name *</label>
+                <input
+                  type="text"
+                  name="childName"
+                  required
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Class *</label>
+                <select
+                  name="class"
+                  required
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                  <option value="">Select Class</option>
+                  <option value="daycare">Daycare</option>
+                  <option value="kindergarten1">Kindergarten 1</option>
+                  <option value="kindergarten2">Kindergarten 2</option>
+                  <option value="kindergarten3">Kindergarten 3</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Date of Birth *</label>
+                <input
+                  type="date"
+                  name="dateOfBirth"
+                  required
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
+                <select
+                  name="gender"
+                  required
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Previous School (if any)</label>
+                <input
+                  type="text"
+                  name="previousSchool"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Medical Conditions/Allergies</label>
+                <textarea
+                  name="medicalConditions"
+                  rows={3}
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
           {/* Parent Information */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">Parent/Guardian Information</h3>
@@ -105,59 +176,6 @@ const RegistrationForm = ({ isOpen, onClose }: RegistrationFormProps) => {
                   required
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
-              </div>
-            </div>
-          </div>
-
-          {/* Child Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Child Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Child's Full Name *</label>
-                <input
-                  type="text"
-                  name="childName"
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Date of Birth *</label>
-                <input
-                  type="date"
-                  name="dateOfBirth"
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
-                <select
-                  name="gender"
-                  required
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Previous School (if any)</label>
-                <input
-                  type="text"
-                  name="previousSchool"
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Medical Conditions/Allergies</label>
-                <textarea
-                  name="medicalConditions"
-                  rows={3}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                ></textarea>
               </div>
             </div>
           </div>
