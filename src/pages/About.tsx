@@ -61,49 +61,6 @@ const About = () => {
             <p className="text-gray-600 leading-relaxed">
               Kibuli Nursery School was started in 1979 as a community school. It was rebranded in 2016, this involved change of name to Kibuli Muslim Nursery School, the motto, vision, mission and core values. The School is exclusively dependent on fees from pupils and a few donations through capital investments from Young Men Muslim Association, the custodian for the school. We have a heart for the community around us and exist to take this passion to the people; not to only support from a distance, but to get involved in their daily lives. Together we build, work, educate, care and play and in doing so we not only uplift the community we serve, but we allow them to impact us as well.
             </p>
-
-            {/* Kid-friendly Images */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://i.giphy.com/media/QZJEUSsDrA8IcqbFNc/giphy.webp" 
-                  alt="Happy Kids Learning" 
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://i.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.webp" 
-                  alt="Kids Reading" 
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Additional Fun Images */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://i.giphy.com/media/3oKIPic2BnoVZkRla8/giphy.webp" 
-                  alt="Kids Playing" 
-                  className="w-full h-32 object-cover"
-                />
-              </div>
-              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://i.giphy.com/media/kg19fN5BXbZGIDkyuL/giphy.webp" 
-                  alt="Kids Learning" 
-                  className="w-full h-32 object-cover"
-                />
-              </div>
-              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="https://i.giphy.com/media/1APhD9YbsvYS6oYtD7/giphy.webp" 
-                  alt="Kids Having Fun" 
-                  className="w-full h-32 object-cover"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 animate-float">
