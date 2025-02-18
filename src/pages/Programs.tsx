@@ -34,9 +34,18 @@ const Programs = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 bg-gradient-to-b from-white to-secondary/20">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
+    <div 
+      className="min-h-screen pt-24 relative"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1526634027863-ab377500bd1d?q=80&w=2070')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      <div className="absolute inset-0 bg-white/90" />
+      <div className="relative max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-gray-900 mb-6">
             Our <span className="text-primary">Programs</span>
           </h1>
@@ -50,7 +59,7 @@ const Programs = () => {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-200 animate-float"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 animate-zoom-out"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <program.icon className="w-12 h-12 text-primary mb-4" />
