@@ -64,16 +64,45 @@ const About = () => {
 
             {/* Kid-friendly Images */}
             <div className="grid grid-cols-2 gap-4 mt-6">
-              <img 
-                src="/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png" 
-                alt="Happy Kids" 
-                className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
-              />
-              <img 
-                src="/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png" 
-                alt="Learning Together" 
-                className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
-              />
+              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="https://i.giphy.com/media/QZJEUSsDrA8IcqbFNc/giphy.webp" 
+                  alt="Happy Kids Learning" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="https://i.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.webp" 
+                  alt="Kids Reading" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Additional Fun Images */}
+            <div className="grid grid-cols-3 gap-4">
+              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="https://i.giphy.com/media/3oKIPic2BnoVZkRla8/giphy.webp" 
+                  alt="Kids Playing" 
+                  className="w-full h-32 object-cover"
+                />
+              </div>
+              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="https://i.giphy.com/media/kg19fN5BXbZGIDkyuL/giphy.webp" 
+                  alt="Kids Learning" 
+                  className="w-full h-32 object-cover"
+                />
+              </div>
+              <div className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="https://i.giphy.com/media/1APhD9YbsvYS6oYtD7/giphy.webp" 
+                  alt="Kids Having Fun" 
+                  className="w-full h-32 object-cover"
+                />
+              </div>
             </div>
           </div>
 
