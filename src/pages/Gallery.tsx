@@ -2,6 +2,11 @@
 const Gallery = () => {
   const images = [
     {
+      src: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
+      alt: "Graduation Ceremony",
+      caption: "Celebrating our graduates' achievements"
+    },
+    {
       src: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
       alt: "School Entrance",
       caption: "Our welcoming school entrance"
@@ -30,11 +35,6 @@ const Gallery = () => {
       src: "/lovable-uploads/3bd4ee51-7dc3-4eb5-966e-0ec880b8fdc0.png",
       alt: "School Programs",
       caption: "Our comprehensive educational programs"
-    },
-    {
-      src: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
-      alt: "Graduation Ceremony",
-      caption: "Celebrating our graduates' achievements"
     }
   ];
 

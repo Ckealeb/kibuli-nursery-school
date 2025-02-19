@@ -24,10 +24,6 @@ const Index = () => {
     title: "Learning Environment",
     description: "Interactive and engaging learning spaces"
   }, {
-    url: "/lovable-uploads/a69eaf4f-4337-445d-bebe-33c82c20021b.png",
-    title: "School Activities",
-    description: "Engaging and educational activities for all ages"
-  }, {
     url: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
     title: "Graduation Ceremony",
     description: "Celebrating our students' achievements"
@@ -35,8 +31,14 @@ const Index = () => {
 
   useEffect(() => {
     if (!api) return;
+    api.scrollTo(0); // Reset to first slide when component mounts
     const interval = setInterval(() => {
-      api.scrollNext();
+      const isLastSlide = api.selectedScrollSnap() === api.slideNodes().length - 1;
+      if (isLastSlide) {
+        api.scrollTo(0); // Loop back to the first slide
+      } else {
+        api.scrollNext();
+      }
     }, 5000);
     return () => clearInterval(interval);
   }, [api]);
