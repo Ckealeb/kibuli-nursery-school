@@ -27,6 +27,10 @@ const Index = () => {
     url: "/lovable-uploads/a69eaf4f-4337-445d-bebe-33c82c20021b.png",
     title: "School Activities",
     description: "Engaging and educational activities for all ages"
+  }, {
+    url: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
+    title: "Graduation Ceremony",
+    description: "Celebrating our students' achievements"
   }];
 
   useEffect(() => {
