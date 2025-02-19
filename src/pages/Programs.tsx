@@ -34,41 +34,55 @@ const Programs = () => {
     bgColor: "bg-[#FFDEE2]/80"
   }];
 
-  return <div className="min-h-screen pt-24 relative" style={{
-    backgroundImage: "url('https://images.unsplash.com/photo-1526634027863-ab377500bd1d?q=80&w=2070')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed"
-  }}>
-      <div className="absolute inset-0 bg-white/90" />
-      <div className="relative max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-gray-900 mb-6">
-            Our <span className="text-primary">Programs</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive early childhood education programs designed for every stage of development. 
-            We provide a dual curriculum of theology and secular studies using the 21st century learning approach.
-          </p>
-        </div>
+  return (
+    <div className="min-h-screen relative">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: "url('/lovable-uploads/a69eaf4f-4337-445d-bebe-33c82c20021b.png')",
+          filter: "brightness(0.3)"
+        }}
+      />
+      
+      <div className="relative pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-white mb-6">
+              Our <span className="text-primary">Programs</span>
+            </h1>
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              Comprehensive early childhood education programs designed for every stage of development. 
+              We provide a dual curriculum of theology and secular studies using the 21st century learning approach.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {programs.map((program, index) => (
-            <div 
-              key={index} 
-              className={`${program.bgColor} backdrop-blur-sm rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105`}
-            >
-              <program.icon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-2xl font-quicksand font-semibold text-gray-900 mb-2">
-                {program.title}
-              </h3>
-              <p className="text-primary font-medium mb-4">{program.age}</p>
-              <p className="text-gray-600">{program.description}</p>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {programs.map((program, index) => (
+              <div 
+                key={index} 
+                className={`${program.bgColor} backdrop-blur-sm rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105`}
+              >
+                <program.icon className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-2xl font-quicksand font-semibold text-gray-900 mb-2">
+                  {program.title}
+                </h3>
+                <p className="text-primary font-medium mb-4">{program.age}</p>
+                <p className="text-gray-600">{program.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 rounded-2xl overflow-hidden shadow-xl">
+            <img 
+              src="/lovable-uploads/3bd4ee51-7dc3-4eb5-966e-0ec880b8fdc0.png" 
+              alt="Kibuli Muslim Nursery School Programs"
+              className="w-full object-cover"
+            />
+          </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default Programs;
