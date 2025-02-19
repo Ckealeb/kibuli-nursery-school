@@ -24,9 +24,9 @@ const Index = () => {
     title: "Learning Environment",
     description: "Interactive and engaging learning spaces"
   }, {
-    url: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
-    title: "Play Area",
-    description: "Safe and fun outdoor activities"
+    url: "/lovable-uploads/a69eaf4f-4337-445d-bebe-33c82c20021b.png",
+    title: "School Activities",
+    description: "Engaging and educational activities for all ages"
   }];
 
   useEffect(() => {

@@ -27,9 +27,9 @@ const Gallery = () => {
       caption: "Well-stocked library"
     },
     {
-      src: "/lovable-uploads/e94b44ee-1362-446d-bdf3-c57ced89fd19.png",
-      alt: "Outdoor Activities",
-      caption: "Outdoor learning activities"
+      src: "/lovable-uploads/3bd4ee51-7dc3-4eb5-966e-0ec880b8fdc0.png",
+      alt: "School Programs",
+      caption: "Our comprehensive educational programs"
     }
   ];
 
