@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigation = [{
@@ -38,7 +40,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map(item => <Link key={item.name} to={item.path} className="font-quicksand text-gray-600 hover:bg-primary/5 px-3 py-2 rounded-md transition-colors duration-200">
+            {navigation.map(item => <Link key={item.name} to={item.path} className="font-quicksand text-gray-600 relative px-3 py-2 rounded-md transition-all duration-300 hover:text-primary hover:bg-primary/5 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 hover:after:w-full after:transition-all after:duration-300">
                 {item.name}
               </Link>)}
           </div>
@@ -55,11 +57,12 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && <div className="md:hidden absolute top-20 inset-x-0 bg-white/95 backdrop-blur-sm shadow-lg animate-fade-up">
           <div className="pt-2 pb-3 space-y-1">
-            {navigation.map(item => <Link key={item.name} to={item.path} className="block px-4 py-2 text-gray-600 hover:bg-primary/5 hover:text-primary font-quicksand transition-colors duration-200" onClick={() => setIsOpen(false)}>
+            {navigation.map(item => <Link key={item.name} to={item.path} className="block px-4 py-2 text-gray-600 hover:bg-primary/10 hover:text-primary font-quicksand transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-0 hover:after:w-1/4 after:transition-all after:duration-300" onClick={() => setIsOpen(false)}>
                 {item.name}
               </Link>)}
           </div>
         </div>}
     </nav>;
 };
+
 export default Navbar;
