@@ -41,17 +41,17 @@ const LoadingAnimation = ({ isLoading, onAnimationComplete }: LoadingAnimationPr
           <motion.div
             className="w-40 h-40"
             animate={{ 
-              x: [0, 100, 0], 
+              x: [-50, 50], 
+              y: [0, -10, 0]
             }}
             transition={{ 
-              repeat: Infinity, 
-              duration: 3, 
-              ease: "linear" 
+              x: { repeat: Infinity, repeatType: "reverse", duration: 1.5, ease: "linear" },
+              y: { repeat: Infinity, duration: 0.5, ease: "easeInOut" }
             }}
           >
             <img 
               src="/lovable-uploads/daa2510f-a44c-409e-b339-095808f5539f.png" 
-              alt="Crawling Baby" 
+              alt="Child Running to School" 
               className="w-full h-full object-contain"
             />
           </motion.div>
@@ -62,7 +62,7 @@ const LoadingAnimation = ({ isLoading, onAnimationComplete }: LoadingAnimationPr
             transition={{ duration: 0.5 }}
             className="text-4xl font-quicksand font-bold text-primary"
           >
-            Welcome!
+            Welcome to School!
           </motion.div>
         )}
       </div>
