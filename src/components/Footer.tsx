@@ -1,3 +1,4 @@
+
 import { Heart, Mail, MapPin, Phone, Instagram, Twitter, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -55,7 +56,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors duration-200"
                 >
-                  Off Pr. Badru Kakungulu Rd, opp Kibuli Hspt.
+                  Off Prince Badru Kakungulu Rd. Opp Kibuli Hospt.
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-300">
@@ -70,12 +71,12 @@ const Footer = () => {
               <li className="flex items-center gap-2 text-sm text-gray-300">
                 <MessageSquare className="w-4 h-4 text-primary" />
                 <a 
-                  href="https://wa.me/256758942853"
+                  href="https://wa.me/256780161968"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors duration-200"
                 >
-                  WhatsApp: +256 758 942 853
+                  WhatsApp: +256 780 161 968
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-300">

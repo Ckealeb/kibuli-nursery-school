@@ -5,7 +5,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Address",
-      content: "Off Pr. Badru Kakungulu Rd, opp Kibuli Hspt.",
+      content: "Off Prince Badru Kakungulu Rd. Opp Kibuli Hospt.",
       link: "https://maps.google.com/?q=Kibuli+Muslim+Nursery+School,+Prince+Badru+Kakungulu+Road,+Kampala",
     },
     {
@@ -17,8 +17,8 @@ const Contact = () => {
     {
       icon: MessageSquare,
       title: "WhatsApp",
-      content: "+256 758 942 853",
-      link: "https://wa.me/256758942853",
+      content: "+256 780 161 968",
+      link: "https://wa.me/256780161968",
     },
     {
       icon: Mail,
