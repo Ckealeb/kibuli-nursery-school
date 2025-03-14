@@ -22,7 +22,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/kibuli-nursery-school">
         <PageLoader />
         <div className="flex flex-col min-h-screen">
           <Navbar />
