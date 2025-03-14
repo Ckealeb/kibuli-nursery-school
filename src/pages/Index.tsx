@@ -1,3 +1,4 @@
+
 import { School, GraduationCap, Smile, Users } from "lucide-react";
 import {
   Carousel,

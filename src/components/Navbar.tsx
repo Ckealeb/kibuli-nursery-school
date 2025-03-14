@@ -24,7 +24,9 @@ const Navbar = () => {
     name: "Contact",
     path: "/contact"
   }];
-  return <nav className="bg-white/95 backdrop-blur-sm fixed w-full z-50 shadow-sm">
+  
+  return (
+    <nav className="bg-white/95 backdrop-blur-sm fixed w-full z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-blue-300 hover:bg-blue-200">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -40,14 +42,23 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map(item => <Link key={item.name} to={item.path} className="font-quicksand text-gray-600 relative px-3 py-2 rounded-md transition-all duration-300 hover:text-primary hover:bg-primary/5 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 hover:after:w-full after:transition-all after:duration-300">
+            {navigation.map(item => (
+              <Link 
+                key={item.name} 
+                to={item.path} 
+                className="font-quicksand text-gray-600 relative px-3 py-2 rounded-md transition-all duration-300 hover:text-primary hover:bg-primary/5 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 hover:after:w-full after:transition-all after:duration-300"
+              >
                 {item.name}
-              </Link>)}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 hover:text-primary transition-colors duration-200">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-gray-600 hover:text-primary transition-colors duration-200"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -55,14 +66,24 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isOpen && <div className="md:hidden absolute top-20 inset-x-0 bg-white/95 backdrop-blur-sm shadow-lg animate-fade-up">
+      {isOpen && (
+        <div className="md:hidden absolute top-20 inset-x-0 bg-white/95 backdrop-blur-sm shadow-lg animate-fade-up">
           <div className="pt-2 pb-3 space-y-1">
-            {navigation.map(item => <Link key={item.name} to={item.path} className="block px-4 py-2 text-gray-600 hover:bg-primary/10 hover:text-primary font-quicksand transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-0 hover:after:w-1/4 after:transition-all after:duration-300" onClick={() => setIsOpen(false)}>
+            {navigation.map(item => (
+              <Link 
+                key={item.name} 
+                to={item.path} 
+                className="block px-4 py-2 text-gray-600 hover:bg-primary/10 hover:text-primary font-quicksand transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:bottom-0 after:left-0 hover:after:w-1/4 after:transition-all after:duration-300" 
+                onClick={() => setIsOpen(false)}
+              >
                 {item.name}
-              </Link>)}
+              </Link>
+            ))}
           </div>
-        </div>}
-    </nav>;
+        </div>
+      )}
+    </nav>
+  );
 };
 
 export default Navbar;

@@ -1,69 +1,59 @@
-# Welcome to your Lovable project
 
-## Project info
+# Kibuli Muslim Nursery School
 
-**URL**: https://lovable.dev/projects/8ca24190-0ef6-434c-9d5b-7b5308cd6e11
+This is the official website for Kibuli Muslim Nursery School, a nurturing educational institution for young children.
 
-## How can I edit this code?
+## Project Overview
 
-There are several ways of editing your application.
+This website showcases the school's programs, facilities, values, and admission process. It's built with modern web technologies to provide a responsive and engaging user experience.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8ca24190-0ef6-434c-9d5b-7b5308cd6e11) and start prompting.
+- Responsive design for all device sizes
+- Interactive components with smooth animations
+- Program information
+- Gallery of school images
+- Admission request form
+- Contact information
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technology Stack
 
-**Use your preferred IDE**
+- React.js
+- TypeScript
+- Tailwind CSS
+- Shadcn UI components
+- Framer Motion for animations
+- React Router for navigation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+To run this project locally:
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/kibuli-nursery-school.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to project directory
+cd kibuli-nursery-school
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The site can be deployed using various platforms:
 
-**Use GitHub Codespaces**
+- Netlify
+- Vercel
+- GitHub Pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contact
 
-## What technologies are used for this project?
+For any inquiries about the website or the school, please contact:
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8ca24190-0ef6-434c-9d5b-7b5308cd6e11) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Email: kibulimuslimnurseryschool@gmail.com
+- Phone: +256 701 748 194

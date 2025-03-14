@@ -13,10 +13,10 @@ const PageLoader = () => {
     setIsLoading(true);
     setShowAnimation(true);
     
-    // Simulate page loading time (you can remove this in production)
+    // Simulate page loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
     
     return () => clearTimeout(timer);
   }, [location.pathname]);
