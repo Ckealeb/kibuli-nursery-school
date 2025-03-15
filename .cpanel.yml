@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export: /
-      to: /home/kibulimu/NewWebsite1/
+      to: /home/kibulimu/public_html
