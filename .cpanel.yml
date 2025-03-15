@@ -1,5 +1,7 @@
 ---
 deployment:
   tasks:
-    - export: /
-      to: /home/kibulimu/public_html
+    - export:
+        source: /
+        destination: public_html
+
