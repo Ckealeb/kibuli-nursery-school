@@ -17,15 +17,15 @@ const Index = () => {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const images = [{
-    url: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
+    url: "./lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
     title: "School Entrance",
     description: "Welcome to Kibuli Muslim Nursery School"
   }, {
-    url: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
+    url: "./lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
     title: "Learning Environment",
     description: "Interactive and engaging learning spaces"
   }, {
-    url: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
+    url: "./lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
     title: "Graduation Ceremony",
     description: "Celebrating our students' achievements"
   }];

@@ -17,12 +17,25 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Get the base name from the URL if deployed to GitHub Pages
+// This helps with routing when deployed to a specific repository
+const getBasename = () => {
+  // Return empty string if running locally
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return '';
+  }
+  // Extract repository name for GitHub Pages
+  const pathArray = window.location.pathname.split('/');
+  const repoName = pathArray[1]; // Repository name will be the first part of the path
+  return repoName ? `/${repoName}` : '';
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <PageLoader />
         <div className="flex flex-col min-h-screen">
           <Navbar />
