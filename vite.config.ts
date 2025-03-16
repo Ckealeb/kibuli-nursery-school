@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "./", // This ensures assets are loaded correctly on GitHub Pages
+  base: "./kibuli-nursery-school", // This ensures assets are loaded correctly on GitHub Pages
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
