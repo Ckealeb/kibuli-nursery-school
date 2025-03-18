@@ -7,24 +7,25 @@ interface LoadingAnimationProps {
   onAnimationComplete?: () => void;
 }
 
-const LoadingAnimation = ({ isLoading, onAnimationComplete }: LoadingAnimationProps) => {
+const LoadingAnimation = function(props) {
+  const { isLoading, onAnimationComplete } = props;
   const [showWelcome, setShowWelcome] = useState(false);
 
-  useEffect(() => {
+  useEffect(function() {
     if (!isLoading) {
       // When loading is complete, show welcome message
-      const timer = setTimeout(() => {
+      const timer = setTimeout(function() {
         setShowWelcome(true);
         
         // Hide the animation after welcome is shown
-        const welcomeTimer = setTimeout(() => {
+        const welcomeTimer = setTimeout(function() {
           if (onAnimationComplete) onAnimationComplete();
         }, 2000);
         
-        return () => clearTimeout(welcomeTimer);
+        return function() { clearTimeout(welcomeTimer); };
       }, 300);
       
-      return () => clearTimeout(timer);
+      return function() { clearTimeout(timer); };
     }
   }, [isLoading, onAnimationComplete]);
 

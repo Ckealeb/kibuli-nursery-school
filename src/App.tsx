@@ -19,42 +19,44 @@ const queryClient = new QueryClient();
 
 // Get the base name from the URL if deployed to GitHub Pages
 // This helps with routing when deployed to a specific repository
-const getBasename = () => {
+const getBasename = function() {
   // Return empty string if running locally
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     return '';
   }
   // Extract repository name for GitHub Pages
-  const pathArray = window.location.pathname.split('/');
-  const repoName = pathArray[1]; // Repository name will be the first part of the path
-  return repoName ? `/${repoName}` : '';
+  var pathArray = window.location.pathname.split('/');
+  var repoName = pathArray[1]; // Repository name will be the first part of the path
+  return repoName ? '/' + repoName : '';
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={getBasename()}>
-        <PageLoader />
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/programs" element={<Programs />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/admissions" element={<Admissions />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = function() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={getBasename()}>
+          <PageLoader />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/programs" element={<Programs />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/admissions" element={<Admissions />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

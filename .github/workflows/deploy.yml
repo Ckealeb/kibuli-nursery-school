@@ -1,3 +1,4 @@
+
 name: Deploy to GitHub Pages
 
 on:
@@ -16,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Use the Node.js version your project requires
+        node-version: '12'  # Updated to 12 which is more compatible with our build process but still close to v11
 
     - name: Install dependencies
       run: npm install
