@@ -2,39 +2,44 @@
 const Gallery = () => {
   const images = [
     {
-      src: "/lovable-uploads/24be7b19-0246-445d-a075-dd738c896cb2.png",
-      alt: "Graduation Ceremony",
-      caption: "Celebrating our graduates' achievements"
+      src: "/lovable-uploads/536aad8d-3911-423e-8dac-8359e8bf0560.png",
+      alt: "Students Praying",
+      caption: "Our students learning to pray together"
     },
     {
-      src: "/lovable-uploads/201e79ea-b6fe-4b78-b3b8-1ac5168927d9.png",
-      alt: "School Entrance",
-      caption: "Our welcoming school entrance"
+      src: "/lovable-uploads/18081b71-0297-44e1-825a-3086dc2ad0c4.png",
+      alt: "Outdoor Activities",
+      caption: "Engaging in outdoor learning activities"
     },
     {
-      src: "/lovable-uploads/68a68ed1-bfda-4ef6-a9d7-4dee1c374353.png",
-      alt: "Learning Environment",
-      caption: "Interactive learning spaces"
+      src: "/lovable-uploads/a0a448a8-bddb-4dc3-ae05-8d1c07273686.png",
+      alt: "Prayer Session",
+      caption: "Students practicing Islamic prayers"
     },
     {
-      src: "/lovable-uploads/d5ced61b-032b-4bc2-b91f-d991b96927e0.png",
-      alt: "Play Area",
-      caption: "Safe and fun play areas"
+      src: "/lovable-uploads/6a9b5a05-7825-44f8-b1eb-038d0082dd23.png",
+      alt: "Student Assembly",
+      caption: "Morning assembly and activities"
     },
     {
-      src: "/lovable-uploads/daa2510f-a44c-409e-b339-095808f5539f.png",
-      alt: "Activity Room",
-      caption: "Engaging activity spaces"
+      src: "/lovable-uploads/43660ab3-2109-4ff7-9380-612658600829.png",
+      alt: "Prayer Time",
+      caption: "Another view of our students during prayer"
     },
     {
-      src: "/lovable-uploads/de8dfbd6-71dc-4f86-ba18-996d18b9bae4.png",
-      alt: "Library",
-      caption: "Well-stocked library"
+      src: "/lovable-uploads/fecbdd0b-0527-45ef-a836-72bbb5c7ff65.png",
+      alt: "School Grounds",
+      caption: "Students and teachers on our school grounds"
     },
     {
-      src: "/lovable-uploads/3bd4ee51-7dc3-4eb5-966e-0ec880b8fdc0.png",
-      alt: "School Programs",
-      caption: "Our comprehensive educational programs"
+      src: "/lovable-uploads/0b19860f-8a93-446b-b4fd-f031a38c69ce.png",
+      alt: "Student Activities",
+      caption: "Learning and playing together"
+    },
+    {
+      src: "/lovable-uploads/8ab7ed39-c717-4131-a844-64ce3205e188.png",
+      alt: "Outdoor Learning",
+      caption: "Natural environment learning sessions"
     }
   ];
 
